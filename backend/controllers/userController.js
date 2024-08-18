@@ -329,7 +329,7 @@ exports.oAuthLoginSuccess = async (req, res, next) => {
       //   user,
       //   token,
       // });
-      .redirect("http://localhost:3000");
+      .redirect("https://store-i914.onrender.com/");
   } catch (err) {
     return next(err);
   }

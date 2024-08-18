@@ -18,17 +18,18 @@ const {
 const { isAuthenticatedUser, authorizeRoles } = require("../middlewares/auth");
 // const {gclientID, gclientSecret, gcallbackURL} = require("../config/index");
 // const passport = require('../config/passport/google')
-const gclientID ="385545253232-7ghshov1r53lb7bqge67lcm0op8onue0.apps.googleusercontent.com"
-const gclientSecret ="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"
-const gcallbackURL="https://store-i914.onrender.com/api/v1/google/callback"
+const gclientID =
+  "385545253232-7ghshov1r53lb7bqge67lcm0op8onue0.apps.googleusercontent.com";
+const gclientSecret = "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";
+const gcallbackURL = "https://store-i914.onrender.com/api/v1/google/callback";
 const { Strategy } = require("passport-google-oauth20");
 const passport = require("passport");
-console.log(gclientID)
+console.log(gclientID);
 passport.use(
   new Strategy(
     {
       // clientID:  process.env.GOOGLE_CLIENT_ID,
-      clientID:gclientID,
+      clientID: gclientID,
       clientSecret: gclientSecret,
       callbackURL: gcallbackURL,
     },
@@ -39,8 +40,8 @@ passport.use(
         email,
         picture: avatar,
       } = profile?._json;
-      console.log('inside google auth')
-      console.log(firstName,lastName,email)
+      console.log("inside google auth");
+      console.log(firstName, lastName, email);
       oAuthLogin(firstName, lastName, email, cb, avatar);
     }
   )
