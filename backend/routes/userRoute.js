@@ -16,19 +16,21 @@ const {
   oAuthLogin,
 } = require("../controllers/userController");
 const { isAuthenticatedUser, authorizeRoles } = require("../middlewares/auth");
-const { clientID, clientSecret, callbackURL } = require("../config/index");
+// const {gclientID, gclientSecret, gcallbackURL} = require("../config/index");
 // const passport = require('../config/passport/google')
-
+const gclientID ="385545253232-7ghshov1r53lb7bqge67lcm0op8onue0.apps.googleusercontent.com"
+const gclientSecret ="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"
+const gcallbackURL="http://localhost:4000/api/v1/google/callback"
 const { Strategy } = require("passport-google-oauth20");
 const passport = require("passport");
-
+console.log(gclientID)
 passport.use(
   new Strategy(
     {
       // clientID:  process.env.GOOGLE_CLIENT_ID,
-      clientID,
-      clientSecret,
-      callbackURL,
+      clientID:gclientID,
+      clientSecret: gclientSecret,
+      callbackURL: gcallbackURL,
     },
     function (accessToken, refreshToken, profile, cb) {
       const {
@@ -37,8 +39,8 @@ passport.use(
         email,
         picture: avatar,
       } = profile?._json;
-      console.log("inside google auth");
-      console.log(firstName, lastName, email);
+      console.log('inside google auth')
+      console.log(firstName,lastName,email)
       oAuthLogin(firstName, lastName, email, cb, avatar);
     }
   )

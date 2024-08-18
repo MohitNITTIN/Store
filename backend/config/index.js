@@ -20,7 +20,7 @@ const {
   CLOUDINARY_CLOUD_NAME,
   CLOUDINARY_API_KEY,
   CLOUDINARY_API_SECRET,
-  PAYTM_MID = dgfg515451514451,
+  PAYTM_MID,
   PAYTM_MERCHANT_KEY,
   PAYTM_WEBSITE,
   PAYTM_CHANNEL_ID,
@@ -29,7 +29,7 @@ const {
   NODE_ENV,
   DEV_API,
   PROD_API,
-  clientID,
-  clientSecret,
-  callbackURL
+  gclientID,
+  gclientSecret,
+  gcallbackURL,
 } = process.env;
