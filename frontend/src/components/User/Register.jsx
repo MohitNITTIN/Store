@@ -12,8 +12,8 @@ import BackdropLoader from '../Layouts/BackdropLoader';
 import MetaData from '../Layouts/MetaData';
 import FormSidebar from './FormSidebar';
 const MODE = 'dev';
-const SERVER_DEV_API = "http://localhost:4000";
-const SERVER_PROD_API = "http://localhost:4000";
+const SERVER_DEV_API = "https://store-i914.onrender.com";
+const SERVER_PROD_API = "https://store-i914.onrender.com";
 // import { GoogleLogin } from '@react-oauth/google';
 
 
